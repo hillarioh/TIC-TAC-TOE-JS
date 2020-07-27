@@ -1,0 +1,25 @@
+{
+  "name": "TIC-TAC-TOE-JS",
+  "version": "1.0.0",
+  "description": "Tic tac toe game using javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hillarioh/TIC-TAC-TOE-JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hillarioh/TIC-TAC-TOE-JS/issues"
+  },
+  "homepage": "https://github.com/hillarioh/TIC-TAC-TOE-JS#readme",
+  "devDependencies": {
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
