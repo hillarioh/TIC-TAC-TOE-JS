@@ -1,6 +1,17 @@
 import Board from './board';
 import Player from './players';
 const moves = ['', '', '', '', '', '', '', '', ''];
+const winningCases = [
+  [0, 1, 2],
+  [0, 4, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [2, 4, 6],
+  [3, 4, 5],
+  [6, 7, 8],
+];
+
 const gameBoard = document.getElementById('board');
 
 const board = new Board(moves);
@@ -13,7 +24,7 @@ gameBoard.addEventListener('click', (e) => {
   if (!slot) return;
   const tabs = e.target.dataset.target;
   let currentPlayer = player.changePlayer(count);
-  console.log(currentPlayer)
+  console.log(currentPlayer);
   let sign = player.playerSign(currentPlayer);
   board.play(tabs, sign);
   count++;
