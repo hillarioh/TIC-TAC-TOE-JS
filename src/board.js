@@ -13,6 +13,10 @@ class Board {
   play(idx, player) {
     this.moves[idx] = player;
   }
+  checkWin(arr){
+      
+
+  }
 }
 
 export default Board;
