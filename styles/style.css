@@ -6,16 +6,28 @@
 }
 
 body {
-  background: rgb(253, 225, 225);
+  /* background: rgb(253, 225, 225); */
   font-family: 'Quicksand', sans-serif;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+header > h2 {
+  font-size: 4rem;
+}
+
+form {
+  max-width: 60%;
+  margin: 3rem auto;
+}
+
+.content{
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 3rem;
 }
 
 .board {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   width: 30rem;
 

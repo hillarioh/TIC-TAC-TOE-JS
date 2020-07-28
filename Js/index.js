@@ -83,3 +83,16 @@ gameBoard.addEventListener('click', (e) => {
   show(won, currentPlayer[0]);
   count++;
 });
+
+
+// DOM ELEMENT REFERENCES
+const myForm = document.querySelector('form');
+const ply1 = document.getElementById('p1');
+const ply2 = document.getElementById('p2');
+const submitButton = document.getElementById('submit-button');
+
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    gameBoard.style.display = 'grid';
+    myForm.style.display= 'none';
+});
