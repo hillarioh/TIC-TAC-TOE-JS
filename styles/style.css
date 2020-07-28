@@ -20,10 +20,10 @@ form {
   margin: 3rem auto;
 }
 
-.content{
+.content {
   display: none;
   flex-direction: column;
- align-items: center;
+  align-items: center;
   margin-top: 3rem;
 }
 
@@ -39,10 +39,9 @@ form {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 30rem;
-
 }
 
-.board>div {
+.board > div {
   height: 10rem;
   width: 10rem;
   /* border: 3px solid #950000; */
@@ -53,34 +52,47 @@ form {
   font-size: 5rem;
 }
 
-.board>div:nth-child(2) {
+.board > div:nth-child(2) {
   border-right: 10px solid #950000;
   border-left: 10px solid #950000;
 }
 
-.board>div:nth-child(4) {
+.board > div:nth-child(4) {
   border-top: 10px solid #950000;
   border-bottom: 10px solid #950000;
 }
 
-.board>div:nth-child(5) {
+.board > div:nth-child(5) {
   border: 10px solid #950000;
 }
 
-.board>div:nth-child(6) {
+.board > div:nth-child(6) {
   border-top: 10px solid #950000;
   border-bottom: 10px solid #950000;
 }
 
-.board>div:nth-child(8) {
+.board > div:nth-child(8) {
   border-right: 10px solid #950000;
   border-left: 10px solid #950000;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .show {
   display: block;
+}
+
+#winner {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 4rem 0px;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

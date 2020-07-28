@@ -32,6 +32,7 @@
           <input
             type="text"
             class="form-control"
+            name="p1"
             id="p1"
             placeholder="Please enter your name"
           />
@@ -41,6 +42,7 @@
           <input
             type="text"
             class="form-control"
+            name="p2"
             id="p2"
             placeholder="Please enter your name"
           />
@@ -50,11 +52,18 @@
         </button>
       </form>
     </div>
+    <div class="centered hidden" id="replay">
+      <div id="winner"></div>
+      <button type="button" class="btn btn-primary btn-lg" id="reload">
+        Play Again?
+      </button>
+    </div>
+
     <div class="content">
       <div class="points">
-        <div class="col-3" id="p1">Player1</div>
-        <div class="col-4" id="winner">The winner is </div>
-        <div class="col-3" id="p2">Player 2</div>
+        <div id="pl1">Player1</div>
+
+        <div id="pl2">Player 2</div>
       </div>
       <div class="board" id="board"></div>
     </div>

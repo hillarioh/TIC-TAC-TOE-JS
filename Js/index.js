@@ -1,3 +1,15 @@
+const myForm = document.querySelector('form');
+const ply1 = document.getElementById('pl1');
+const ply2 = document.getElementById('pl2');
+const submitButton = document.getElementById('submit-button');
+const contentField = document.querySelector('.content');
+const input1 = document.getElementById('p1');
+const input2 = document.getElementById('p2');
+const replay = document.getElementById('replay');
+const reload = document.getElementById('reload');
+const gameBoard = document.getElementById('board');
+const winner = document.getElementById('winner');
+
 const moves = ['', '', '', '', '', '', '', '', ''];
 const winningCases = [
   [0, 1, 2],
@@ -10,14 +22,12 @@ const winningCases = [
   [6, 7, 8],
 ];
 
-const gameBoard = document.getElementById('board');
-const winner = document.getElementById('winner');
-
 function Players() {
   (this.p1 = 'X'), (this.p2 = 'O');
 }
 
 const players = new Players();
+let won = false;
 
 function changePlayer(p) {
   let { p1, p2 } = players;
@@ -54,7 +64,9 @@ const show = (w = null, p = null) => {
   }
   gameBoard.innerHTML = places;
   if (w) {
-    winner.innerHTML = `${p} wins!`;
+    winner.innerHTML = `${p} wins!🎉🎉🎉🎉`;
+    contentField.classList.add('hidden');
+    replay.classList.remove('hidden');
   } else if (!w && !moves.includes('')) {
     winner.innerHTML = `Draw!`;
   }
@@ -62,13 +74,26 @@ const show = (w = null, p = null) => {
 show();
 
 const valid = (idx, p) => {
-  if (moves[idx] === '') {
+  if (moves[idx] === '' && !won) {
     moves[idx] = playerSign(p);
+  } else if (won) {
+    throw new Error('Game Over!');
   } else {
     alert('Please choose an empty spot!');
     throw new Error('Illegal Move!');
   }
 };
+
+myForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  console.log();
+  players.p1 = input1.value || 'Player 1';
+  players.p2 = input2.value || 'Player 2';
+  contentField.style.display = 'flex';
+  myForm.style.display = 'none';
+  ply1.innerHTML = players.p1;
+  ply2.innerHTML = players.p2;
+});
 
 let count = 0;
 gameBoard.addEventListener('click', (e) => {
@@ -78,22 +103,13 @@ gameBoard.addEventListener('click', (e) => {
   const tabs = e.target.dataset.target;
   let currentPlayer = changePlayer(count);
   valid(tabs, currentPlayer[0]);
-  let moveArr = playerMoves(currentPlayer[0]);
-  let won = checkWin(moveArr);
+  let moveArr = playerMoves(playerSign(currentPlayer[0]));
+  console.log(moveArr);
+  won = checkWin(moveArr);
   show(won, currentPlayer[0]);
   count++;
 });
 
-
-// DOM ELEMENT REFERENCES
-const myForm = document.querySelector('form');
-const ply1 = document.getElementById('p1');
-const ply2 = document.getElementById('p2');
-const submitButton = document.getElementById('submit-button');
-const contentField = document.querySelector('.content');
-
-submitButton.addEventListener('click', (e) => {
-    e.preventDefault();
-   contentField.style.display = 'flex';
-    myForm.style.display= 'none';
+reload.addEventListener('click', () => {
+  window.location.reload();
 });
