@@ -90,9 +90,10 @@ const myForm = document.querySelector('form');
 const ply1 = document.getElementById('p1');
 const ply2 = document.getElementById('p2');
 const submitButton = document.getElementById('submit-button');
+const contentField = document.querySelector('.content');
 
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
-    gameBoard.style.display = 'grid';
+   contentField.style.display = 'flex';
     myForm.style.display= 'none';
 });
