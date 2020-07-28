@@ -3,13 +3,13 @@ Tic tac toe game using javascript
 ## Screenshot
 
 1. Home 
-[screenshot1](./images/intro.png)
+![screenshot1](./images/intro.png)
 
 2. Game
-[screenshot2](./images/game.png)
+![screenshot2](./images/game.png)
 
 3. Results
-[screenshot3](./images/final.png)
+![screenshot3](./images/final.png)
 
 
 
