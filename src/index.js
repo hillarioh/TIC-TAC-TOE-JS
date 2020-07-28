@@ -13,20 +13,28 @@ const winningCases = [
 ];
 
 const gameBoard = document.getElementById('board');
+const winner = document.getElementById('winner');
 
-const board = new Board(moves);
+const board = new Board(moves, winningCases);
 const player = new Player();
 gameBoard.innerHTML = board.display();
 
 let count = 0;
+function won(name) {
+  return (winner.innerHTML = `${name} wins!`);
+}
+
 gameBoard.addEventListener('click', (e) => {
   const slot = e.target.nodeName === 'DIV';
   if (!slot) return;
   const tabs = e.target.dataset.target;
   let currentPlayer = player.changePlayer(count);
-  console.log(currentPlayer);
-  let sign = player.playerSign(currentPlayer);
-  board.play(tabs, sign);
+  let sign = player.playerSign(currentPlayer[0]);
+  let steps = board.playerMoves(sign);
+  board.play(tabs, sign, steps);
   count++;
+  if (board.checkWin(steps)) {
+    won(currentPlayer[1]);
+  }
   gameBoard.innerHTML = board.display();
 });
