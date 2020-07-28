@@ -73,6 +73,8 @@ const show = (w = null, p = null) => {
     replay.classList.remove('hidden');
   } else if (!w && !moves.includes('')) {
     winner.innerHTML = 'Draw!';
+    contentField.classList.add('hidden');
+    replay.classList.remove('hidden');
   }
 };
 show();
