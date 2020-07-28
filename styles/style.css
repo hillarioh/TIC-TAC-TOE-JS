@@ -2,27 +2,58 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
-  background: url('/images/wood.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: rgb(253, 225, 225);
+  font-family: 'Quicksand', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 30rem;
+
 }
 
-.board > div {
+.board>div {
   height: 10rem;
   width: 10rem;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 3px solid #950000; */
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Fruktur', cursive;
+  font-size: 5rem;
+}
+
+.board>div:nth-child(2) {
+  border-right: 10px solid #950000;
+  border-left: 10px solid #950000;
+}
+
+.board>div:nth-child(4) {
+  border-top: 10px solid #950000;
+  border-bottom: 10px solid #950000;
+}
+
+.board>div:nth-child(5) {
+  border: 10px solid #950000;
+}
+
+.board>div:nth-child(6) {
+  border-top: 10px solid #950000;
+  border-bottom: 10px solid #950000;
+}
+
+.board>div:nth-child(8) {
+  border-right: 10px solid #950000;
+  border-left: 10px solid #950000;
 }
 
 .hidden {
