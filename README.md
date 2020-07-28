@@ -28,7 +28,7 @@ Tic tac toe game using javascript
 - Bootstrap
 
 ## Live Demo
-
+[Live link](https://pedantic-pike-f0dd3d.netlify.app/)
 
 
 ## Authors
