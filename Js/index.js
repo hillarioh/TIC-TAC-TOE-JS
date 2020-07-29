@@ -6,14 +6,15 @@ import player from './player.js';
 import currentBoard from './board.js';
 
 const board = currentBoard.Board();
-const players = player.Players();
+let players = player.Players();
 
 board.show();
 
 selectors.myForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  players.p1 = selectors.input1.value || 'Player 1';
-  players.p2 = selectors.input2.value || 'Player 2';
+  const p1 = selectors.input1.value || 'Player 1';
+  const p2 = selectors.input2.value || 'Player 2';
+  players = player.Players(p1, p2);
   selectors.contentField.style.display = 'flex';
   selectors.myForm.style.display = 'none';
   selectors.ply1.innerHTML = players.p1;
