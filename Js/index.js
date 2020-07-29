@@ -1,18 +1,20 @@
-/* eslint-disable no-undef */
-const game = new Game();
-const selectors = game.selectors();
+/* eslint-disable import/extensions */
+/* eslint-disable no-plusplus */
+/* eslint-disable consistent-return */
+import * as selectors from './elements.js';
+import player from './player.js';
+import currentBoard from './board.js';
 
-const player = new Player();
-const players = player.players();
-
-const board = new GameBoard();
+const board = currentBoard.Board();
+let players = player.Players();
 
 board.show();
 
 selectors.myForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  players.p1 = selectors.input1.value || 'Player 1';
-  players.p2 = selectors.input2.value || 'Player 2';
+  const p1 = selectors.input1.value || 'Player 1';
+  const p2 = selectors.input2.value || 'Player 2';
+  players = player.Players(p1, p2);
   selectors.contentField.style.display = 'flex';
   selectors.myForm.style.display = 'none';
   selectors.ply1.innerHTML = players.p1;
@@ -25,12 +27,12 @@ selectors.gameBoard.addEventListener('click', (e) => {
   if (!slot) return;
   let won = false;
   const tabs = e.target.dataset.target;
-  const currentPlayer = player.changePlayer(count);
-  board.valid(tabs, currentPlayer[0], player.playerSign, won);
-  const moveArr = board.playerMoves(player.playerSign(currentPlayer[0]));
+  const currentPlayer = players.changePlayer(count);
+  const sign = players.playerSign(currentPlayer[0]);
+  board.valid(tabs, sign);
+  const moveArr = board.playerMoves(sign);
   won = board.checkWin(moveArr);
   board.show(won, currentPlayer[0]);
-  // eslint-disable-next-line no-plusplus
   count++;
 });
 
