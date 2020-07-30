@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-tac-toe</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fruktur&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="bg-dark p-0 m-0 d-flex justify-content-center">
+      <h2>Tic Tac Toe</h2>
+    </header>
+
+    <div class="welcome">
+      <form action="" id="form">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Player 1</label>
+          <input
+            type="text"
+            class="form-control"
+            name="p1"
+            id="p1"
+            placeholder="Please enter your name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Player 2</label>
+          <input
+            type="text"
+            class="form-control"
+            name="p2"
+            id="p2"
+            placeholder="Please enter your name"
+          />
+        </div>
+        <button type="submit" id="submit-button" class="btn btn-primary">
+          Start
+        </button>
+      </form>
+    </div>
+    <div class="centered hidden" id="replay">
+      <div id="winner"></div>
+      <button type="button" class="btn btn-primary btn-lg" id="reload">
+        Play Again?
+      </button>
+    </div>
+
+    <div class="content">
+      <div class="points">
+        <div id="pl1">Player1</div>
+
+        <div id="pl2">Player 2</div>
+      </div>
+      <div class="board" id="board"></div>
+    </div>
+    <script src="Js/index.js" type="module"></script>
+  </body>
+</html>
