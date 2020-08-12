@@ -20,6 +20,12 @@ Tic tac toe game using javascript
 - The game finishes with a draw or a tic-tac-toe sequence.
 - The match finishes with the best of three games or a draw.
 
+## Testing Instructions
+To run the test use the following command: 
+
+```npm run test``` 
+
+![test](./images/test.png)
 
 ## Built With
 
