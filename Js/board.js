@@ -45,7 +45,7 @@ function Board() {
       throw new Error('Game Over!');
     } else {
       // eslint-disable-next-line no-alert
-      alert('Please choose an empty spot!');
+      // alert('Please choose an empty spot!');
       throw new Error('Illegal Move!');
     }
   };
@@ -67,7 +67,11 @@ function Board() {
   };
 
   return {
-    moves, playerMoves, checkWin, show, valid,
+    moves,
+    playerMoves,
+    checkWin,
+    show,
+    valid,
   };
 }
 
